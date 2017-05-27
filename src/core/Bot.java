@@ -2,6 +2,8 @@ package core;
 
 import java.util.HashMap;
 
+import commands.CoinCommand;
+import commands.DiceCommand;
 import commands.PingCommand;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
@@ -15,6 +17,7 @@ public class Bot {
 	private static JDA jda;
 	public static HashMap<String, Command> commands = new HashMap<String, Command>();
 	public static final BotParser parser = new BotParser();
+	//private static TextChannel logChannel;
 	
 	public Bot() {
 		try {
@@ -24,8 +27,10 @@ public class Bot {
 			e.printStackTrace();
 		}
 		
-		jda.getTextChannelsByName("bot", true).get(0);
+		//add commands to hashmap
 		commands.put("ping", new PingCommand());
+		commands.put("coin", new CoinCommand());
+		commands.put("dice", new DiceCommand());
 	}
 
 	public static void main(String[] args) {
@@ -44,5 +49,4 @@ public class Bot {
 			}
 		}
 	}
-
 }

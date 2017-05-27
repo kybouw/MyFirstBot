@@ -23,6 +23,8 @@ hs_err_pid*
 /bin/
 
 # my text files
+secrets/
+token
 .secrets.txt
 
 # Eclipse Files

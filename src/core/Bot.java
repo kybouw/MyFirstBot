@@ -18,7 +18,7 @@ public class Bot {
 	
 	public Bot() {
 		try {
-			jda = new JDABuilder(AccountType.BOT).setToken(utils.Constants.TOKEN).addEventListener(new BotListener()).buildBlocking();
+			jda = new JDABuilder(AccountType.BOT).setToken(utils.Constants.getToken()).addEventListener(new BotListener()).buildBlocking();
 			jda.setAutoReconnect(true);
 		} catch (Exception e) {
 			e.printStackTrace();

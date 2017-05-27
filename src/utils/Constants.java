@@ -1,7 +1,29 @@
 package utils;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Constants {
 
-	public final static String TOKEN = new String("MzE3ODc4NDA5NDcwNDEwNzUy.DAqsjA.gpupu3DJRz-S-hYem9eJmTOC6tU");
-	public final static String BOT_CHANNEL_ID = new String("317919145125740555");
+	
+	private static final File file = new File("src/secrets/token");
+	public static String getToken()
+	{
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(file));
+			return br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (br != null) br.close();
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}//end catch
+		}//end finally
+		return null;
+	}
 }

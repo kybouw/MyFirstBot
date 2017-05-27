@@ -24,3 +24,7 @@ hs_err_pid*
 
 # my text files
 .secrets.txt
+
+# Eclipse Files
+.classpath
+.project
